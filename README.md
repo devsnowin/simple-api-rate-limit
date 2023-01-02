@@ -18,4 +18,6 @@ and install the dependencies
 
 `npm i`
 
-[Vist the project]('https://simple-rate-limit.vercel.app')
+### Vist the project
+
+👉🏼 https://simple-rate-limit.vercel.app
