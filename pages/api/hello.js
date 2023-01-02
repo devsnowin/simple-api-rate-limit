@@ -1,5 +1,18 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+import { rateLimiter } from '../../lib/rateLimit';
 
-export default function handler(req, res) {
-  res.status(200).json({ name: 'John Doe' })
-}
+export default rateLimiter(
+    /**
+     *
+     * @param {import('next').NextApiRequest} req
+     * @param {import('next').NextApiResponse} res
+     * @param {number} ttl
+     * @param {number} remainingCall
+     */
+    async (req, res, ttl, remainingCall) => {
+        res.status(200).json({
+            message: 'Hello',
+            ttl,
+            remainingCall,
+        });
+    }
+);
